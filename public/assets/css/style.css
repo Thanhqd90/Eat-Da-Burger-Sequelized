@@ -1,0 +1,36 @@
+body {
+  background-color:rgb(252, 87, 76);
+  color: white;
+}
+
+
+ul.burger-list {
+  list-style: none;
+}
+
+ul.burger-list>li{
+  padding: 10px 20px;
+  background-color: black;
+  margin: 5px;
+  font-size: 1.4rem;
+  border-color: rgb(255, 255, 255);
+  border-style: solid;
+  border-width: 2px;
+}
+
+#new-burger {
+  width: 450px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: auto;
+}
+
+
+#text-enter-button {
+  margin-top: 10px;
+  margin-bottom: 18px;
+}
+
+span{
+  color: rgb(163, 158, 158);
+}

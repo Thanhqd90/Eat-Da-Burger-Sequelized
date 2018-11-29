@@ -1,0 +1,54 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center mb-4">
+			<h1> Eat-Da-Burger! (Sequalized)</h1>
+			<img src="/assets/images/patrick.gif" alt="burger" />
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<form action="/burgers/create" method="POST">
+						<input type="text" class="form-control" name="burger_name" placeholder="Name of burger" value="" id="new-burger">
+						<button type="submit" class="btn btn-primary" id="text-enter-button">Add to menu</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="col-md-12 col-lg-6 text-center" class="task">
+			<ul class="mt-2 burger-list">
+			<h1>Available to Eat</h1>
+				{{#each burger}}
+				{{#unless this.devoured}}
+
+				<li><span>Burger Name: </span>{{this.burger_name}}
+					<form class="devour-form">
+						<input type="hidden" type="text" class="burger-id" value={{this.id}}>
+
+						<input class="customer-input mt-2" type="text" placeholder="Enter your name"><br>
+
+						<button type="submit" class="btn-danger mt-2 btn">Click here to devour!</button>
+					</form>
+				</li>
+
+				{{/unless}}
+				{{/each}}
+			</ul>
+
+		</div>
+		<div class="col-md-12 col-lg-6 text-center" class="task">
+			<ul class="mt-2 burger-list">
+			<h1>Previously Devoured</h1>
+				{{#each burger}}
+				{{#if this.devoured}}
+				{{#if this.Customer.customer}}
+				<li> {{this.burger_name}} <span>(Devoured by {{this.Customer.customer}})</span></li>
+				{{/if}}
+				{{/if}}
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+</div>
