@@ -10,12 +10,12 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       defaultValue: false
     }
-  }, {
-    classMethods: {
-      associate: function(models) {
+  });
+
+ 
+      Burger.associate = function(models) {
         Burger.hasOne(models.Customer);
       }
-    }
-  });
+
   return Burger;
 };

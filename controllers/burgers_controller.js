@@ -2,7 +2,6 @@
 var express = require("express");
 
 var router = express.Router();
-// grabbing our models
 var db = require("../models");
 
 // Redirect to /burgers
@@ -42,7 +41,7 @@ router.post("/burgers/create", function(req, res) {
     });
 });
 
-// put route to devour a burger
+// put create customer db then update boolean for devour for a burger
 router.put("/burgers/update", function(req, res) {
   if (req.body.customer) {
     db.Customer.create({
